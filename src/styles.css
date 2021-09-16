@@ -1,5 +1,12 @@
 * {
   margin: 0;
-  padding: 0;
+  padding: 50px;
   box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(119, 179, 235);
+}
+.app {
+  background-color: rgb(157, 204, 248);
 }
