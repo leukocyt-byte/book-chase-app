@@ -1,5 +1,5 @@
 const AuthorTable = (props) => {
-  const { autors } = props;
+  const { authors } = props;
   return (
     <table>
       <caption>Author results</caption>
@@ -12,7 +12,7 @@ const AuthorTable = (props) => {
         </tr>
       </thead>
       <tbody>
-        {autors.map((autor) => (
+        {authors.map((autor) => (
           <tr key={autor.docs[0].key}>
             <td>{autor.docs[0].name}</td>
             <td>{autor.docs[0].birth_date}</td>

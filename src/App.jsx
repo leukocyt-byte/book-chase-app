@@ -14,7 +14,6 @@ function App() {
         .then((result) => {
           setQuery('');
           setAuthor(result);
-          console.log(result);
         });
     }
   };
@@ -29,6 +28,11 @@ function App() {
           value={query}
           onKeyPress={search}
         ></input>
+        {typeof author.numFound != 'undefined' ? (
+          <AuthorTable authors={author} />
+        ) : (
+          ''
+        )}{' '}
       </div>
       <div className="col">BOOKS</div>
     </div>
