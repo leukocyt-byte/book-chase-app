@@ -4,9 +4,9 @@ function App() {
   return (
     <div className="app">
       <div className="col" id="col__left">
-        Author
+        AUTHORS
       </div>
-      <div className="col">Books</div>
+      <div className="col">BOOKS</div>
     </div>
   );
 }
