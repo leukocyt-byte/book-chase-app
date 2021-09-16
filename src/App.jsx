@@ -3,7 +3,10 @@ import './styles.css';
 function App() {
   return (
     <div className="app">
-      <br></br>
+      <div className="col" id="col__left">
+        Author
+      </div>
+      <div className="col">Books</div>
     </div>
   );
 }
