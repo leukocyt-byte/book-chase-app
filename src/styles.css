@@ -4,19 +4,19 @@
   box-sizing: border-box;
 }
 
-body {
+/* body {
   background-color: rgb(62, 151, 235);
-}
+} */
 .app {
   padding: 50px;
   min-height: 100vh;
-  background-color: rgb(119, 179, 235);
+  /* background-color: rgb(119, 179, 235); */
   display: flex;
   flex-wrap: wrap;
 }
 
 .col {
-  background-color: rgb(168, 213, 255);
+  /* background-color: rgb(168, 213, 255); */
   flex: 1 1 160px;
   margin-left: 50px;
 }
