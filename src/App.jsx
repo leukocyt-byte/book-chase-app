@@ -29,7 +29,6 @@ function App() {
           value={query}
           onKeyPress={search}
         ></input>
-        {result === {} ? '' : <AuthorTable />}
       </div>
       <div className="col">BOOKS</div>
     </div>
