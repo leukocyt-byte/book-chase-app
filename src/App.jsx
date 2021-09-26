@@ -53,7 +53,11 @@ function App() {
           ''
         )}{' '} */}
       </div>
-      <div className="col">BOOKS</div>
+      <div className="col">
+        BOOKS
+        <li>book 1</li>
+        <li>book 2</li>
+      </div>
     </div>
   );
 }
