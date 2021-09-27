@@ -5,7 +5,7 @@ import './styles.css';
 
 function App() {
   const [query, setQuery] = useState('');
-  const [author, setAuthor] = useState({ docs: [] });
+  const [author, setAuthor] = useState();
 
   const search = (e) => {
     if (e.key === 'Enter') {
@@ -14,7 +14,6 @@ function App() {
         .then((result) => {
           setQuery('');
           setAuthor(result);
-          console.log(result);
         });
     }
   };
@@ -30,28 +29,32 @@ function App() {
           onKeyPress={search}
         ></input>
         <section>
-          <ul>
-            {author.docs.map((author, index) => {
-              return (
-                <li key={index}>
-                  <div>
-                    <div>
-                      <h3>{author.name}</h3>
-                      <p>Birth date: {author.name}</p>
-                      <p>Top work: {author.top_work}</p>
-                    </div>
-                  </div>
-                  <hr />
-                </li>
-              );
-            })}
-          </ul>
+          {!author ? (
+            ''
+          ) : (
+            <table>
+              <caption>Author results</caption>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Work count</th>
+                  <th>Birth date</th>
+                  <th>Top subjects</th>
+                </tr>
+              </thead>
+              <tbody>
+                {author.docs.slice(0, 5).map((author, index) => (
+                  <tr key={index}>
+                    <td>{author.name}</td>
+                    <td>{author.work_count}</td>
+                    <td>{author.birth_date}</td>
+                    <td>{author.top_subjects[0]}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
         </section>
-        {/* {typeof author.numFound != 'undefined' ? (
-          <AuthorTable authors={author} />
-        ) : (
-          ''
-        )}{' '} */}
       </div>
       <div className="col">
         BOOKS
