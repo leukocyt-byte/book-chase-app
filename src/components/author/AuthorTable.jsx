@@ -18,7 +18,7 @@ const AuthorTable = (props) => {
             <td>{index.name}</td>
             <td>{index.work_count}</td>
             <td>{index.birth_date}</td>
-            <td>{index.top_subcjects}</td>
+            <td>{index.top_subjects[0]}</td>
           </tr>
         ))}
       </tbody>
