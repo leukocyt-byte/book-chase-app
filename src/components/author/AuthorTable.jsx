@@ -1,5 +1,6 @@
 const AuthorTable = (props) => {
-  const { authors } = props;
+  console.log(props.props.docs[0].key);
+  console.log(props.props.docs[0]);
   return (
     <table>
       <caption>Author results</caption>
@@ -12,11 +13,12 @@ const AuthorTable = (props) => {
         </tr>
       </thead>
       <tbody>
-        {authors.map((autor) => (
-          <tr key={autor.docs[0].key}>
-            <td>{autor.docs[0].name}</td>
-            <td>{autor.docs[0].birth_date}</td>
-            <td>{autor.docs[0].top_subcjects[0]}</td>
+        {props.props.docs.slice(0, 5).map((index) => (
+          <tr key={index.key}>
+            <td>{index.name}</td>
+            <td>{index.work_count}</td>
+            <td>{index.birth_date}</td>
+            <td>{index.top_subcjects}</td>
           </tr>
         ))}
       </tbody>

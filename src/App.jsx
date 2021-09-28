@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import AuthorTable from './components/author/AuthorTable';
 
 import './styles.css';
 
@@ -38,27 +39,29 @@ function App() {
           {!author ? (
             ''
           ) : (
-            <table>
-              <caption>Author results</caption>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Work count</th>
-                  <th>Birth date</th>
-                  <th>Top subjects</th>
-                </tr>
-              </thead>
-              <tbody>
-                {author.docs.slice(0, 5).map((author, index) => (
-                  <tr key={index}>
-                    <td>{author.name}</td>
-                    <td>{author.work_count}</td>
-                    <td>{author.birth_date}</td>
-                    <td>{author.top_subjects[0]}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <AuthorTable props={author} />
+
+            // <table>
+            //   <caption>Author results</caption>
+            //   <thead>
+            //     <tr>
+            //       <th>Name</th>
+            //       <th>Work count</th>
+            //       <th>Birth date</th>
+            //       <th>Top subjects</th>
+            //     </tr>
+            //   </thead>
+            //   <tbody>
+            //     {author.docs.slice(0, 5).map((author, index) => (
+            //       <tr key={index}>
+            //         <td>{author.name}</td>
+            //         <td>{author.work_count}</td>
+            //         <td>{author.birth_date}</td>
+            //         <td>{author.top_subjects[0]}</td>
+            //       </tr>
+            //     ))}
+            //   </tbody>
+            // </table>
           )}
         </section>
       </div>
